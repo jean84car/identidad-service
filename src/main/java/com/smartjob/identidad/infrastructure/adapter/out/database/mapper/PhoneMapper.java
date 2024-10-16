@@ -8,13 +8,14 @@ import com.smartjob.identidad.infrastructure.adapter.out.database.entity.PhoneEn
 
 @Mapper(componentModel = "spring")
 public interface PhoneMapper {
-
+	
     @Mapping(source = "cityCode", target = "citycode")
     @Mapping(source = "countryCode", target = "contrycode")
     Phone toDomain(PhoneEntity phoneEntity);
 
     @Mapping(source = "citycode", target = "cityCode")
     @Mapping(source = "contrycode", target = "countryCode")
+    @Mapping(target = "customer", ignore = true)
     PhoneEntity toEntity(Phone phone);
     
 }
