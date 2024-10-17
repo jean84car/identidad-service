@@ -47,12 +47,36 @@ java -jar target/identidad-service-0.0.1-SNAPSHOT.jar
   - validation.user.emailRegex=^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}$
   - validation.user.passwordRegex=^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z]{6,}$
 
+##### Ejemplo de un request:
+
+```json
+{
+  "name": "Juan Rodriguez",
+  "email": "juan@rodriguez.org",
+  "password": "hunter2",
+  "phones": [
+    {
+      "number": "1234567",
+      "citycode": "1",
+      "contrycode": "57"
+    }
+  ]
+}
+```
+
+#### Swagger
+
+  - Swagger UI: http://localhost:8080/swagger-ui.html
+
+  - API Docs: http://localhost:8080/v1/api-docs  
+
 
 ## Script de Base de Datos
 
 El script para crear la base de datos se encuentra en la carpeta database del proyecto con el nombre identidad.sql
 
 ###Modelo entidad relacion
+
 ![identidad](database/identidad.jpeg)
 
 
